@@ -14,67 +14,81 @@ EXPERIENCES
 Egerie 01/2023 - ACTUAL Backend Tech Lead Domain Expertise: Cybersecurity
 EGERIE is a collaborative platform for managing cyber risks.
 Responsabilities
-Technical support for a team of 5 full- stack developers
-Ensuring consistent quality of code and deliverables
-Maintenance of existing applications and implementation of new features Refactoring and migrating legacy code
+Technical support for a team of 5 fullstack developers
+Ensure consistent quality of code and deliverables
+Maintain the existing applications and enhance it with new features
+Refactor and migrate legacy code
 Achievements
-Established the process for upgrading PHP versions from 8.0 to 8.1
-Developed and automated unit tests Upgraded the existing authentication system
+Establish the process for upgrading PHP versions from 8.0 to 8.1
+Develop and automated unit tests
+Upgrade the existing authentication system
 PHP 8.1 / Symfony 5.4 / API Platform 2.6 / React 17 / MySQL / Docker / GitLab / Jira / Scrum / Debian 12
 
 Veolia 10/2018 - 12/2022 Full-Stack Tech Lead Domain Expertise: Water and Sanitation Services
 FluksAqua is a web application for analyzing data from water and sanitation service installations.
 Responsabilities
-Management of a team of 7 full-stack developers and 2 backend developers
-Ensuring consistent quality of code and deliverables
-Process optimization to enhance agility and promote the Test-Driven Development (TDD) approach Planning and technical assessment of new features, including workload estimation and deadline management
+Manage a team of 7 full-stack developers and 2 backend developers
+Ensure consistent quality of code and deliverables
+Optimize workflows to improve team productivity
+Promote the Test-Driven Development (TDD) approach
+Orchestrate the planning and technical evaluation of new features with workload estimation and deadlines
 Achievements
-Organized and led the FluksAquademy to strengthen team skills
-Maintained SonarQube for continuous code quality assurance Outsourced export generation and management of indicator calculations
+Organize and lead the FluksAquademy to strengthen team skills
+Maintain SonarQube for continuous code quality assurance
+Outsource export generation and management of indicator calculations
 PHP 7.1 / Symfony 3.4 / API Rest / VueJS 2.6 / MySQL / Solr / MongoDB / Cassandra / AWS / Docker / Travis / SonarQube / Github / Trello / Kanban / Scrum / MacOS 10
 
 Open Group-Enedis 03/2018 - 09/2018
 Lead Full-Stack Developer Domain Expertise: Energy
-Oups V2 est une application Web pour la gestion des prélèvements de compteurs et l'accompagnement des agents sur le terrain.
+Oups V2 is a web application for managing meter readings and supporting field agents.
 Responsabilities & Achievements
-Management technique d'une équipe de 5 développeurs fullstack Refonte et migration de l'application OUPS V1
-Séparation du front du back
-Construction d'une API REST pour exposer les données vers le front
+Technical management of a team of 5 full-stack developers
+Refactor and migrate the OUPS V1 application
+Separate the front-end from the back-end
+Build a REST API to expose data to the front-end
 PHP 7.1 / Symfony 3.4 / Angular 5 / HTML5 / CSS3 / Bootstrap 3 / MariaDB 10 / Docker / Jenkins / Jira / Scrum / Windows 10
 
-Open Group - Ministère de la Culture 08/2017 - 02/2018 Lead Full-Stack Developer Domain Expertiser: Public
+Open Group - Ministry of Culture of France 08/2017 - 02/2018 
+Full-Stack Lead Developer Domain Expertiser: Public
 Harmonie is a web application for managing investment funds between parliament and associations.
 Responsabilities & Achievements
 Technical management of a team of 4 full-stack developer interns and 1 testing intern
-Ensured the quality of deliverables
-Automated repetitive tasks with scripts
-Participated in and led client workshops
-Set up development and testing environments Managed testing and production deployment Contributed to cost estimation for pre-sales
+Ensure the good quality of deliverables
+Automate repetitive tasks with scripts
+Participate in and led client workshops
+Set up development and testing environments
+Manage testing and production deployment
+Contribute to cost estimation for pre-sales
 PHP 5.4 /Symfony 2.8 / jQuery / HTML5 / CSS3 / Bootstrap / PotgreSQL 9.2 / Vagrant / Jenkins / GitLab / Mantis / Scrumban / Centos 7
 
-Open Group 03/2016 - 07/2017 Full-stack Web Developper Domain Expertise: Health, Public, Multimedia
+Open Group 03/2016 - 07/2017 
+Full-stack Web Developper Domain Expertise: Health, Public, Multimedia
 Web Development for various clients:
-Platform and mobile application MyCurie for Institut Curie: www.mycurie.fr Europe en France platform for CGET: www.europe-en-france.gouv.fr Platform for CNAPS: formations.cnaps-securite.fr
+Platform and mobile application MyCurie for Institut Curie: www.mycurie.fr
+Europe en France platform for CGET: www.europe-en-france.gouv.fr
+Platform for CNAPS: formations.cnaps-securite.fr
 Application management and support for France 24, RFI, and Monte Carlo Doualiya for France Media Monde
 Responsabilities
-Design and development of new features
-Corrective and evolutionary maintenance
-Ensuring responsive design compliance Code review and peer pull request (PR) review
-Active participation in testing, bug reporting, and ensuring software quality Managing testing and production deployment
+Design and develop of new features
+Maintain and enhance the existing softwares
+Ensure responsive design compliance
+Code review and peer pull request (PR) review
+Participate actively in testing, bug reporting, and ensuring software quality
+Manage testing and production deployment
 Achievements
-Generated IPA/APK deliverables and managed deployment to app stores for mobile applications
-Automated regression testing with Selenium2, Gherkin, and Behat
+Generate IPA/APK deliverables and managed deployment to app stores for mobile applications
+Automate regression testing with Selenium2, Gherkin, and Behat
 PHP 5.6 / Symfony 2.8 / Drupal 7 / Swagger API / jQuery / HTML5 / CSS3 / Bootstrap 3 / Phonegap / MySQL 5.7 / VirttualBox / Vagrant / Gitlab / Redmine / Srumban / Ubuntu 14 / Debian 8
 
 COTUPHA 11/2012 - 02/2016 PHP 5 Web Developer Domain Expertise: Pharmaceutical Distribution
 AlixSys is an ERP system that manages all phases of pharmaceutical distribution, from supplier orders to customer delivery.
 Responsabilities
-Corrective and evolutionary maintenance of the existing ERP system
-Writing technical and functional specifications
+Maintain and enhance the existing ERP system
+Write technical and functional specifications
 Achievements
-Collaborated on the MyAlix online sales project
-Completed the fleet management project: conducted client workshops, gathered requirements, designed, developed, and deployed the solution
-PHP 5.6 / JavaScript / jQuery / HTML5 / CSS3 / Bootstrap 3 / MySQL 5.7 / Svn / Asana / Kanban / Mint
+Collaborate on the MyAlix online sales project
+Deliver a complete car park management solution, including client workshops, requirements gathering, design, development, and deployment.
+PHP 5.6 / JavaScript / jQuery / HTML5 / CSS3 / Bootstrap 3 / MySQL 5.7 / Svn / Asana / Kanban / Mint 15
 
 
 
