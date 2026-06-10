@@ -1,19 +1,1091 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" style="width:100%; height:100%;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link rel="icon" type="image/svg+xml" href="logo.png" />
-  <title>Salma BEN HADJ ALI Resume</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salma BEN HADJ ALI – Senior Full-stack Developer</title>
+  <meta name="description" content="Senior Full-stack Developer with 14 years of experience in PHP, Symfony, and React. Based in Britany, France.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<body style="width:100%; height:100%; margin:0;">
-	<object data="https://salmabenhadjali.github.io/resume/Salma%20BEN%20HADJ%20ALI%20-%20Senior%20Full-stack%20Developer.pdf" type="application/pdf" width="100%" height="100%">
-	    <p>
-	    	Your browser does not support embedding PDFs. 
-	    	<a href="https://salmabenhadjali.github.io/resume/Salma%20BEN%20HADJ%20ALI%20-%20Senior%20Full-stack%20Developer.pdf" target="_blank">
-	    		Click here to download the PDF
-	    	</a>.
-	    </p>
-	</object>
+    :root {
+      --bg: #0a1628;
+      --bg-card: #112240;
+      --accent: #64ffda;
+      --accent-dim: rgba(100, 255, 218, 0.1);
+      --text: #ccd6f6;
+      --text-secondary: #8892b0;
+      --text-light: #e6f1ff;
+      --border: #233554;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent);
+      font-size: 1.05rem;
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.83rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-links a span.nav-num {
+      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      margin-right: 0.2rem;
+      font-size: 0.78rem;
+    }
+
+    .nav-resume {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      color: var(--accent) !important;
+      font-size: 0.83rem !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-resume:hover { background: var(--accent-dim) !important; }
+
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid var(--text-secondary);
+      color: var(--text-secondary);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .lang-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ---- SOCIAL SIDEBAR ---- */
+    .social-sidebar {
+      position: fixed;
+      bottom: 0;
+      left: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .social-sidebar::after {
+      content: '';
+      width: 1px;
+      height: 90px;
+      background: var(--text-secondary);
+    }
+
+    .social-sidebar a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .social-sidebar a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .email-sidebar {
+      position: fixed;
+      bottom: 0;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .email-sidebar::after {
+      content: '';
+      width: 1px;
+      height: 90px;
+      background: var(--text-secondary);
+    }
+
+    .email-sidebar a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      writing-mode: vertical-rl;
+      font-family: 'Fira Code', monospace;
+      transition: color 0.2s;
+    }
+
+    .email-sidebar a:hover { color: var(--accent); }
+
+    /* ---- HERO ---- */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .hero-greeting {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-name {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--text-light);
+      line-height: 1.1;
+    }
+
+    .hero-title {
+      font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-secondary);
+      line-height: 1.2;
+      margin-top: 0.2rem;
+    }
+
+    .hero-desc {
+      margin-top: 1.5rem;
+      max-width: 520px;
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .hero-desc a { color: var(--accent); text-decoration: none; }
+
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.875rem 1.75rem;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-primary {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn-primary:hover { background: var(--accent-dim); }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--text-secondary);
+      color: var(--text-secondary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-light);
+      color: var(--text-light);
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      white-space: nowrap;
+    }
+
+    .section-title::before {
+      content: attr(data-num);
+      font-family: 'Fira Code', monospace;
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      max-width: 280px;
+      background: var(--border);
+    }
+
+    /* ---- ABOUT ---- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .about-text a { color: var(--accent); text-decoration: none; }
+
+    .about-sidebar { display: flex; flex-direction: column; gap: 2rem; }
+
+    .sidebar-block h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-level {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+
+    .hobby-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .hobby-tag {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    /* ---- SKILLS ---- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .skill-card:hover {
+      border-color: rgba(100, 255, 218, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .skill-card h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      margin-bottom: 1rem;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .tag {
+      background: rgba(100, 255, 218, 0.06);
+      color: var(--text);
+      border: 1px solid rgba(100, 255, 218, 0.18);
+      border-radius: 3px;
+      padding: 0.22rem 0.6rem;
+      font-size: 0.78rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* ---- EXPERIENCE TIMELINE ---- */
+    .timeline { position: relative; padding-left: 2rem; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 6px; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.38rem;
+      top: 0.55rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px var(--bg);
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color 0.25s;
+    }
+
+    .timeline-card:hover { border-color: rgba(100, 255, 218, 0.3); }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-role { font-size: 1rem; font-weight: 600; color: var(--text-light); }
+    .timeline-company { color: var(--accent); }
+
+    .timeline-date {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .timeline-bullets { list-style: none; margin-bottom: 1.25rem; }
+
+    .timeline-bullets li {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      padding: 0.2rem 0 0.2rem 1.25rem;
+      position: relative;
+    }
+
+    .timeline-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.72rem;
+      top: 0.32rem;
+    }
+
+    .stack-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .stack-tag {
+      background: rgba(100, 255, 218, 0.04);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.18rem 0.5rem;
+      font-size: 0.73rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* ---- EDUCATION ---- */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .edu-card:hover {
+      border-color: rgba(100, 255, 218, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .edu-year {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-title { font-size: 0.9rem; font-weight: 600; color: var(--text-light); margin-bottom: 0.3rem; }
+    .edu-institution { font-size: 0.83rem; color: var(--text-secondary); }
+
+    /* ---- CONTACT ---- */
+    #contact { text-align: center; max-width: 600px; }
+    #contact .section-title { justify-content: center; }
+    #contact .section-title::after { display: none; }
+
+    .contact-desc {
+      color: var(--text-secondary);
+      font-size: 0.97rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      text-align: center;
+      padding: 1.75rem;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      border-top: 1px solid var(--border);
+      font-family: 'Fira Code', monospace;
+      opacity: 0.6;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      #hero { padding: 5rem 1.5rem 2rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .social-sidebar, .email-sidebar { display: none; }
+      .timeline { padding-left: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">salma.dev</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about"><span class="nav-num">01.</span><span data-i18n="nav.about">About</span></a></li>
+      <li><a href="#skills"><span class="nav-num">02.</span><span data-i18n="nav.skills">Skills</span></a></li>
+      <li><a href="#experience"><span class="nav-num">03.</span><span data-i18n="nav.experience">Experience</span></a></li>
+      <li><a href="#education"><span class="nav-num">04.</span><span data-i18n="nav.education">Education</span></a></li>
+      <li><a href="#contact"><span class="nav-num">05.</span><span data-i18n="nav.contact">Contact</span></a></li>
+      <li><a class="nav-resume" href="resume/Salma BEN HADJ ALI - Senior Full-stack Developer.pdf" target="_blank" data-i18n="nav.resume" data-resume>Resume</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle">FR</button>
+  </div>
+</nav>
+
+<!-- SOCIAL SIDEBAR -->
+<div class="social-sidebar">
+  <a href="https://github.com/salmabenhadjali" target="_blank" aria-label="GitHub">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    </svg>
+  </a>
+  <a href="https://www.linkedin.com/in/salma-benhadjali/" target="_blank" aria-label="LinkedIn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect x="2" y="9" width="4" height="12"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  </a>
+  <a href="resume/Salma BEN HADJ ALI - Senior Full-stack Developer.pdf" target="_blank" aria-label="Resume PDF" data-resume>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </svg>
+  </a>
+</div>
+
+<!-- EMAIL SIDEBAR -->
+<div class="email-sidebar">
+  <a href="mailto:salma.benhadjali.io@gmail.com">salma.benhadjali.io@gmail.com</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <p class="hero-greeting" data-i18n="hero.greeting">Hi, my name is</p>
+  <h1 class="hero-name">Salma BEN HADJ ALI</h1>
+  <h2 class="hero-title" data-i18n="hero.title">I build high-performance web systems.</h2>
+  <p class="hero-desc" data-i18n="hero.desc">
+    Senior Full-stack Developer with 14 years of experience specializing in PHP, Symfony, and React.
+    Passionate about clean architecture, DDD, and leading teams toward ambitious goals.
+    Currently building cloud-native solutions at <a href="https://www.believe.com" target="_blank">Believe</a>.
+  </p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#experience" data-i18n="hero.cta1">View my work</a>
+    <a class="btn btn-secondary" href="resume/Salma BEN HADJ ALI - Senior Full-stack Developer.pdf" target="_blank" data-i18n="hero.cta2" data-resume>Download Resume</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title" data-num="01." data-i18n="about.title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p data-i18n="about.p1">I'm a Senior Full-stack Developer based in Britany, France, with 14 years of experience designing and building web applications across music, cybersecurity, water management, media, and government sectors.</p>
+      <p data-i18n="about.p2">My expertise lies in backend architecture with PHP/Symfony, applying Domain-Driven Design, Hexagonal Architecture, and TDD to build scalable, maintainable systems. I'm equally comfortable on the frontend with React and Vue.</p>
+      <p data-i18n="about.p3">Beyond code, I have a strong track record of technical leadership — managing teams of up to 9 developers, conducting code reviews, mentoring engineers, and driving best-practice adoption across organizations.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="sidebar-block">
+        <h4 data-i18n="about.lang-title">Languages</h4>
+        <div class="info-row"><span data-i18n="lang.fr">French</span><span class="info-level" data-i18n="lang.fr.level">Bilingual</span></div>
+        <div class="info-row"><span data-i18n="lang.en">English</span><span class="info-level">B2</span></div>
+        <div class="info-row"><span data-i18n="lang.ar">Arabic</span><span class="info-level" data-i18n="lang.ar.level">Native</span></div>
+      </div>
+      <div class="sidebar-block">
+        <h4 data-i18n="about.hobbies-title">Hobbies</h4>
+        <div class="hobby-tags">
+          <span class="hobby-tag" data-i18n="hobby.cycling">Cycling</span>
+          <span class="hobby-tag" data-i18n="hobby.reading">Reading</span>
+          <span class="hobby-tag" data-i18n="hobby.squash">Squash</span>
+          <span class="hobby-tag" data-i18n="hobby.snowboarding">Snowboarding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title" data-num="02." data-i18n="skills.title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4 data-i18n="skill.languages">Languages</h4>
+      <div class="tags">
+        <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4 data-i18n="skill.frameworks">Frameworks</h4>
+      <div class="tags">
+        <span class="tag">Symfony</span><span class="tag">API Platform</span><span class="tag">React</span><span class="tag">Vue</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4 data-i18n="skill.databases">Databases</h4>
+      <div class="tags">
+        <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">Apache Solr</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4 data-i18n="skill.architecture">Architecture &amp; Practices</h4>
+      <div class="tags">
+        <span class="tag">DDD</span><span class="tag">TDD</span><span class="tag">SOLID</span>
+        <span class="tag">Hexagonal Arch.</span><span class="tag">KISS</span><span class="tag">Design Patterns</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4 data-i18n="skill.devops">DevOps &amp; Cloud</h4>
+      <div class="tags">
+        <span class="tag">Docker</span><span class="tag">GCP</span><span class="tag">Kubernetes</span>
+        <span class="tag">AWS</span><span class="tag">ArgoCD</span><span class="tag">CI/CD</span><span class="tag">Kafka</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4 data-i18n="skill.tools">Tools &amp; Quality</h4>
+      <div class="tags">
+        <span class="tag">PHPUnit</span><span class="tag">Behat</span><span class="tag">PHPStan</span>
+        <span class="tag">SonarQube</span><span class="tag">Datadog</span><span class="tag">Git</span><span class="tag">Jira</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title" data-num="03." data-i18n="exp.title">Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.believe.role">Senior Backend Developer</span> <span class="timeline-company">@ Believe</span></div>
+          <div class="timeline-date" data-i18n="exp.believe.date">May 2025 – Present</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.believe.desc">Leading digital music company specializing in distribution and digital services for artists and labels worldwide.</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.believe.li1">Migrated 20+ legacy batch applications from on-premise to cloud-native architecture on Google Cloud Platform</li>
+          <li data-i18n="exp.believe.li2">Designed scalable workloads on Kubernetes (GKE) leveraging Cloud Storage, Secret Manager, and ArgoCD</li>
+          <li data-i18n="exp.believe.li3">Applied DDD principles — Aggregates, Domain Services, Value Objects — to model complex music catalog business rules</li>
+          <li data-i18n="exp.believe.li4">Defined and implemented Hexagonal Architecture patterns with ports and adapters separation</li>
+          <li data-i18n="exp.believe.li5">Contributed to a modern distributed architecture integrating Kafka and cloud-native services</li>
+          <li data-i18n="exp.believe.li6">Improved system observability, monitoring, and alerting through Datadog and cloud-native tooling</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 8.4</span><span class="stack-tag">Symfony 7.4</span><span class="stack-tag">API Platform 4.3</span>
+          <span class="stack-tag">DDD</span><span class="stack-tag">MariaDB 8.4</span><span class="stack-tag">Kafka</span>
+          <span class="stack-tag">GCP</span><span class="stack-tag">Kubernetes</span><span class="stack-tag">ArgoCD</span>
+          <span class="stack-tag">Datadog</span><span class="stack-tag">Docker</span><span class="stack-tag">GitLab CI/CD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.egerie.role">Backend Tech Lead</span> <span class="timeline-company">@ Egerie</span></div>
+          <div class="timeline-date" data-i18n="exp.egerie.date">Jan 2023 – Aug 2024 · 1 yr 7 mo</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.egerie.desc">Collaborative platform for managing cyber risks.</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.egerie.li1">Technically supported a team of 5 full-stack developers, ensuring consistent code quality and deliverables</li>
+          <li data-i18n="exp.egerie.li2">Conducted detailed technical evaluations for PHP 8.1 upgrade, ensuring compatibility and performance gains</li>
+          <li data-i18n="exp.egerie.li3">Refactored and migrated legacy code, developed and automated unit tests</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 8.1</span><span class="stack-tag">Symfony 5.4</span><span class="stack-tag">API Platform 2.6</span>
+          <span class="stack-tag">React 17</span><span class="stack-tag">MySQL</span><span class="stack-tag">Docker</span>
+          <span class="stack-tag">GitLab CI/CD</span><span class="stack-tag">Scrum</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.veolia.role">Full-Stack Tech Lead</span> <span class="timeline-company">@ Veolia</span></div>
+          <div class="timeline-date" data-i18n="exp.veolia.date">Oct 2018 – Dec 2022 · 4 yrs 2 mo</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.veolia.desc">FluksAqua — web application for analyzing data from water and sanitation service installations.</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.veolia.li1">Managed a team of 7 full-stack and 2 backend developers</li>
+          <li data-i18n="exp.veolia.li2">Evaluated workflows to optimize processes and improve team productivity</li>
+          <li data-i18n="exp.veolia.li3">Promoted the TDD approach and maintained SonarQube for continuous code quality assurance</li>
+          <li data-i18n="exp.veolia.li4">Organized and led the FluksAquademy internal training program to strengthen team skills</li>
+          <li data-i18n="exp.veolia.li5">Orchestrated planning and technical evaluation of new features with workload estimation</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 7.1</span><span class="stack-tag">Symfony 3.4</span><span class="stack-tag">VueJS 2.6</span>
+          <span class="stack-tag">MySQL</span><span class="stack-tag">Apache Solr</span><span class="stack-tag">MongoDB</span>
+          <span class="stack-tag">AWS</span><span class="stack-tag">Docker</span><span class="stack-tag">SonarQube</span><span class="stack-tag">Travis CI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.enedis.role">Full-Stack Lead Developer</span> <span class="timeline-company">@ Open Group – Enedis</span></div>
+          <div class="timeline-date" data-i18n="exp.enedis.date">Mar 2018 – Sep 2018 · 6 mo</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.enedis.desc">Oups V2 — web application for managing meter readings and supporting field agents.</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.enedis.li1">Managed a team of 5 full-stack developers</li>
+          <li data-i18n="exp.enedis.li2">Refactored and migrated the OUPS V1 application, separating front-end from back-end</li>
+          <li data-i18n="exp.enedis.li3">Built a REST API to expose data to the front-end</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 7.1</span><span class="stack-tag">Symfony 3.4</span><span class="stack-tag">Angular 5</span>
+          <span class="stack-tag">MariaDB 10</span><span class="stack-tag">Docker</span><span class="stack-tag">Jenkins</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.culture.role">Full-Stack Lead Developer</span> <span class="timeline-company">@ Open Group – Ministry of Culture</span></div>
+          <div class="timeline-date" data-i18n="exp.culture.date">Aug 2017 – Feb 2018 · 6 mo</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.culture.desc">Harmonie — web application for managing investment funds between parliament and associations.</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.culture.li1">Technically managed a team of 4 full-stack developer interns and 1 testing intern</li>
+          <li data-i18n="exp.culture.li2">Participated in and led client workshops, coordinated testing and deployment processes</li>
+          <li data-i18n="exp.culture.li3">Contributed to cost estimation for pre-sales</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 5.4</span><span class="stack-tag">Symfony 2.8</span><span class="stack-tag">jQuery</span>
+          <span class="stack-tag">PostgreSQL 9.2</span><span class="stack-tag">Jenkins</span><span class="stack-tag">GitLab</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.opengroup.role">Full-Stack Web Developer</span> <span class="timeline-company">@ Open Group</span></div>
+          <div class="timeline-date" data-i18n="exp.opengroup.date">Mar 2016 – Jul 2017 · 1 yr 4 mo</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.opengroup.desc">Web development for high-profile clients: Institut Curie, CGET (europe-en-france.gouv.fr), CNAPS, and France Media Monde (France 24, RFI, Monte Carlo Doualiya).</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.opengroup.li1">Designed and developed new features across multiple client projects</li>
+          <li data-i18n="exp.opengroup.li2">Automated regression testing with Selenium2, Gherkin, and Behat</li>
+          <li data-i18n="exp.opengroup.li3">Generated IPA/APK deliverables and managed deployment to app stores</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 5.6</span><span class="stack-tag">Symfony 2.8</span><span class="stack-tag">Drupal 7</span>
+          <span class="stack-tag">jQuery</span><span class="stack-tag">Phonegap</span><span class="stack-tag">MySQL</span><span class="stack-tag">Behat</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="timeline-role"><span data-i18n="exp.cotupha.role">Backend Web Developer</span> <span class="timeline-company">@ COTUPHA</span></div>
+          <div class="timeline-date" data-i18n="exp.cotupha.date">Nov 2012 – Feb 2016 · 3 yrs 3 mo</div>
+        </div>
+        <p class="timeline-desc" data-i18n="exp.cotupha.desc">AlixSys — ERP system managing all phases of pharmaceutical distribution, from supplier orders to customer delivery.</p>
+        <ul class="timeline-bullets">
+          <li data-i18n="exp.cotupha.li1">Maintained and enhanced the AlixSys ERP system</li>
+          <li data-i18n="exp.cotupha.li2">Wrote technical and functional specifications</li>
+          <li data-i18n="exp.cotupha.li3">Delivered a complete car park management solution from client workshops to production deployment</li>
+        </ul>
+        <div class="stack-tags">
+          <span class="stack-tag">PHP 5.6</span><span class="stack-tag">JavaScript</span><span class="stack-tag">jQuery</span>
+          <span class="stack-tag">MySQL 5.7</span><span class="stack-tag">Bootstrap 3</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title" data-num="04." data-i18n="edu.title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-year">2012</div>
+      <div class="edu-title" data-i18n="edu.degree1">Engineering Degree in Computer Science</div>
+      <div class="edu-institution">Faculty of Sciences of Tunis</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2018</div>
+      <div class="edu-title" data-i18n="edu.degree2">Web Development with Symfony 3</div>
+      <div class="edu-institution">SensioLabs</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2018</div>
+      <div class="edu-title" data-i18n="edu.degree3">Kony Developer Certification 7</div>
+      <div class="edu-institution">Kony</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2020</div>
+      <div class="edu-title">Management 3.0</div>
+      <div class="edu-institution">SOAT</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="text-align:center; max-width:600px;">
+  <h2 class="section-title" data-num="05." data-i18n="contact.title">Get In Touch</h2>
+  <p class="contact-desc" data-i18n="contact.desc">I'm open to new opportunities and interesting projects. Whether you want to discuss a role, a technical challenge, or just connect — my inbox is always open.</p>
+  <a class="btn btn-primary" href="mailto:salma.benhadjali.io@gmail.com" style="display:inline-block;" data-i18n="contact.btn">Say Hello</a>
+</section>
+
+<!-- FOOTER -->
+<footer><span data-i18n="footer.text">Designed &amp; Built by Salma BEN HADJ ALI &nbsp;·&nbsp; Britany, France</span></footer>
+
+<script>
+  const translations = {
+    en: {
+      'nav.about': 'About',
+      'nav.skills': 'Skills',
+      'nav.experience': 'Experience',
+      'nav.education': 'Education',
+      'nav.contact': 'Contact',
+      'nav.resume': 'Resume',
+      'hero.greeting': 'Hi, my name is',
+      'hero.title': 'I build high-performance web systems.',
+      'hero.desc': 'Senior Full-stack Developer with 14 years of experience specializing in PHP, Symfony, and React. Passionate about clean architecture, DDD, and leading teams toward ambitious goals. Currently building cloud-native solutions at <a href="https://www.believe.com" target="_blank">Believe</a>.',
+      'hero.cta1': 'View my work',
+      'hero.cta2': 'Download Resume',
+      'about.title': 'About Me',
+      'about.p1': "I'm a Senior Full-stack Developer based in Britany, France, with 14 years of experience designing and building web applications across music, cybersecurity, water management, media, and government sectors.",
+      'about.p2': 'My expertise lies in backend architecture with PHP/Symfony, applying Domain-Driven Design, Hexagonal Architecture, and TDD to build scalable, maintainable systems. I\'m equally comfortable on the frontend with React.',
+      'about.p3': 'Beyond code, I have a strong track record of technical leadership, managing teams of up to 9 developers, conducting code reviews, mentoring engineers, and driving best-practice adoption across organizations.',
+      'about.lang-title': 'Languages',
+      'about.hobbies-title': 'Hobbies',
+      'lang.fr': 'French', 'lang.fr.level': 'Bilingual',
+      'lang.en': 'English',
+      'lang.ar': 'Arabic', 'lang.ar.level': 'Native',
+      'hobby.cycling': 'Cycling', 'hobby.reading': 'Reading', 'hobby.squash': 'Squash', 'hobby.snowboarding': 'Snowboarding',
+      'skills.title': 'Skills',
+      'skill.languages': 'Languages', 'skill.frameworks': 'Frameworks', 'skill.databases': 'Databases',
+      'skill.architecture': 'Architecture &amp; Practices', 'skill.devops': 'DevOps &amp; Cloud', 'skill.tools': 'Tools &amp; Quality',
+      'exp.title': 'Experience',
+      'exp.believe.role': 'Senior Backend Developer',
+      'exp.believe.date': 'May 2025 – Present',
+      'exp.believe.desc': 'Leading digital music company specializing in distribution and digital services for artists and labels worldwide.',
+      'exp.believe.li1': 'Migrated 20+ legacy batch applications from on-premise to cloud-native architecture on Google Cloud Platform',
+      'exp.believe.li2': 'Designed scalable workloads on Kubernetes (GKE) leveraging Cloud Storage, Secret Manager, and ArgoCD',
+      'exp.believe.li3': 'Applied DDD principles — Aggregates, Domain Services, Value Objects — to model complex music catalog business rules',
+      'exp.believe.li4': 'Defined and implemented Hexagonal Architecture patterns with ports and adapters separation',
+      'exp.believe.li5': 'Contributed to a modern distributed architecture integrating Kafka and cloud-native services',
+      'exp.believe.li6': 'Improved system observability, monitoring, and alerting through Datadog and cloud-native tooling',
+      'exp.egerie.role': 'Backend Tech Lead',
+      'exp.egerie.date': 'Jan 2023 – Aug 2024 · 1 yr 7 mo',
+      'exp.egerie.desc': 'Collaborative platform for managing cyber risks.',
+      'exp.egerie.li1': 'Technically supported a team of 5 full-stack developers, ensuring consistent code quality and deliverables',
+      'exp.egerie.li2': 'Conducted detailed technical evaluations for PHP 8.1 upgrade, ensuring compatibility and performance gains',
+      'exp.egerie.li3': 'Refactored and migrated legacy code, developed and automated unit tests',
+      'exp.veolia.role': 'Full-Stack Tech Lead',
+      'exp.veolia.date': 'Oct 2018 – Dec 2022 · 4 yrs 2 mo',
+      'exp.veolia.desc': 'FluksAqua — web application for analyzing data from water and sanitation service installations.',
+      'exp.veolia.li1': 'Managed a team of 7 full-stack and 2 backend developers',
+      'exp.veolia.li2': 'Evaluated workflows to optimize processes and improve team productivity',
+      'exp.veolia.li3': 'Promoted the TDD approach and maintained SonarQube for continuous code quality assurance',
+      'exp.veolia.li4': 'Organized and led the FluksAquademy internal training program to strengthen team skills',
+      'exp.veolia.li5': 'Orchestrated planning and technical evaluation of new features with workload estimation',
+      'exp.enedis.role': 'Full-Stack Lead Developer',
+      'exp.enedis.date': 'Mar 2018 – Sep 2018 · 6 mo',
+      'exp.enedis.desc': 'Oups V2 — web application for managing meter readings and supporting field agents.',
+      'exp.enedis.li1': 'Managed a team of 5 full-stack developers',
+      'exp.enedis.li2': 'Refactored and migrated the OUPS V1 application, separating front-end from back-end',
+      'exp.enedis.li3': 'Built a REST API to expose data to the front-end',
+      'exp.culture.role': 'Full-Stack Lead Developer',
+      'exp.culture.date': 'Aug 2017 – Feb 2018 · 6 mo',
+      'exp.culture.desc': 'Harmonie — web application for managing investment funds between parliament and associations.',
+      'exp.culture.li1': 'Technically managed a team of 4 full-stack developer interns and 1 testing intern',
+      'exp.culture.li2': 'Participated in and led client workshops, coordinated testing and deployment processes',
+      'exp.culture.li3': 'Contributed to cost estimation for pre-sales',
+      'exp.opengroup.role': 'Full-Stack Web Developer',
+      'exp.opengroup.date': 'Mar 2016 – Jul 2017 · 1 yr 4 mo',
+      'exp.opengroup.desc': 'Web development for high-profile clients: Institut Curie, CGET (europe-en-france.gouv.fr), CNAPS, and France Media Monde (France 24, RFI, Monte Carlo Doualiya).',
+      'exp.opengroup.li1': 'Designed and developed new features across multiple client projects',
+      'exp.opengroup.li2': 'Automated regression testing with Selenium2, Gherkin, and Behat',
+      'exp.opengroup.li3': 'Generated IPA/APK deliverables and managed deployment to app stores',
+      'exp.cotupha.role': 'Backend Web Developer',
+      'exp.cotupha.date': 'Nov 2012 – Feb 2016 · 3 yrs 3 mo',
+      'exp.cotupha.desc': 'AlixSys — ERP system managing all phases of pharmaceutical distribution, from supplier orders to customer delivery.',
+      'exp.cotupha.li1': 'Maintained and enhanced the AlixSys ERP system',
+      'exp.cotupha.li2': 'Wrote technical and functional specifications',
+      'exp.cotupha.li3': 'Delivered a complete car park management solution from client workshops to production deployment',
+      'edu.title': 'Education',
+      'edu.degree1': 'Engineering Degree in Computer Science',
+      'edu.degree2': 'Web Development with Symfony 3',
+      'edu.degree3': 'Kony Developer Certification 7',
+      'contact.title': 'Get In Touch',
+      'contact.desc': "I'm open to new opportunities and interesting projects. Whether you want to discuss a role, a technical challenge, or just connect. My inbox is always open.",
+      'contact.btn': 'Say Hello',
+      'footer.text': 'Designed &amp; Built by Salma BEN HADJ ALI &nbsp;·&nbsp; Britany, France',
+    },
+    fr: {
+      'nav.about': 'À propos',
+      'nav.skills': 'Compétences',
+      'nav.experience': 'Expérience',
+      'nav.education': 'Formation',
+      'nav.contact': 'Contact',
+      'nav.resume': 'CV',
+      'hero.greeting': 'Bonjour, je m\'appelle',
+      'hero.title': 'Je construis des systèmes web performants.',
+      'hero.desc': 'Développeuse Full-stack Senior avec 14 ans d\'expérience, spécialisée en PHP, Symfony et React. Passionnée par l\'architecture propre, le DDD et le leadership technique. Actuellement en charge des solutions cloud-native chez <a href="https://www.believe.com" target="_blank">Believe</a>.',
+      'hero.cta1': 'Voir mon travail',
+      'hero.cta2': 'Télécharger le CV',
+      'about.title': 'À propos',
+      'about.p1': 'Je suis une Développeuse Full-stack Senior basée en Bretagne, avec 14 ans d\'expérience dans la conception et le développement d\'applications web dans les secteurs de la musique, de la cybersécurité, de la gestion de l\'eau, des médias et du secteur public.',
+      'about.p2': 'Mon expertise se concentre sur l\'architecture backend avec PHP/Symfony, en appliquant le Domain-Driven Design, l\'Architecture Hexagonale et le TDD pour construire des systèmes évolutifs et maintenables. Je suis également à l\'aise côté frontend avec React.',
+      'about.p3': 'Au-delà du code, j\'ai un solide parcours en leadership technique, management d\'équipes jusqu\'à 9 développeurs, revues de code, mentorat et promotion des bonnes pratiques au sein des organisations.',
+      'about.lang-title': 'Langues',
+      'about.hobbies-title': 'Loisirs',
+      'lang.fr': 'Français', 'lang.fr.level': 'Bilingue',
+      'lang.en': 'Anglais',
+      'lang.ar': 'Arabe', 'lang.ar.level': 'Natif',
+      'hobby.cycling': 'Vélo', 'hobby.reading': 'Lecture', 'hobby.squash': 'Squash', 'hobby.snowboarding': 'Snowboard',
+      'skills.title': 'Compétences',
+      'skill.languages': 'Langages', 'skill.frameworks': 'Frameworks', 'skill.databases': 'Bases de données',
+      'skill.architecture': 'Architecture &amp; Pratiques', 'skill.devops': 'DevOps &amp; Cloud', 'skill.tools': 'Outils &amp; Qualité',
+      'exp.title': 'Expérience',
+      'exp.believe.role': 'Développeuse Backend Senior',
+      'exp.believe.date': 'Mai 2025 – Présent',
+      'exp.believe.desc': 'Leader de la distribution musicale numérique, spécialisé dans les services digitaux pour artistes et labels dans le monde entier.',
+      'exp.believe.li1': 'Migration de plus de 20 applications batch legacy vers une architecture cloud-native sur Google Cloud Platform',
+      'exp.believe.li2': 'Conception de charges de travail scalables sur Kubernetes (GKE) avec Cloud Storage, Secret Manager et ArgoCD',
+      'exp.believe.li3': 'Application des principes DDD — Agrégats, Services de Domaine, Value Objects — pour modéliser les règles métier du catalogue musical',
+      'exp.believe.li4': 'Définition et mise en œuvre des patterns d\'Architecture Hexagonale avec séparation ports et adaptateurs',
+      'exp.believe.li5': 'Contribution à une architecture distribuée moderne intégrant Kafka et des services cloud-native',
+      'exp.believe.li6': 'Amélioration de l\'observabilité, du monitoring et des alertes via Datadog et les outils cloud-native',
+      'exp.egerie.role': 'Tech Lead Backend',
+      'exp.egerie.date': 'Jan 2023 – Août 2024 · 1 an 7 mois',
+      'exp.egerie.desc': 'Plateforme collaborative de gestion des risques cyber.',
+      'exp.egerie.li1': 'Accompagnement technique d\'une équipe de 5 développeurs full-stack, garantissant la qualité du code et des livrables',
+      'exp.egerie.li2': 'Réalisation d\'évaluations techniques détaillées pour la montée en version PHP 8.1, assurant compatibilité et gains de performance',
+      'exp.egerie.li3': 'Refactoring et migration de code legacy, développement et automatisation des tests unitaires',
+      'exp.veolia.role': 'Tech Lead Full-Stack',
+      'exp.veolia.date': 'Oct 2018 – Déc 2022 · 4 ans 2 mois',
+      'exp.veolia.desc': 'FluksAqua — application web d\'analyse des données des installations de service d\'eau et d\'assainissement.',
+      'exp.veolia.li1': 'Management d\'une équipe de 7 développeurs full-stack et 2 développeurs backend',
+      'exp.veolia.li2': 'Évaluation des workflows pour optimiser les processus et améliorer la productivité de l\'équipe',
+      'exp.veolia.li3': 'Promotion de l\'approche TDD et maintien de SonarQube pour l\'assurance qualité continue du code',
+      'exp.veolia.li4': 'Organisation et animation de la FluksAquademy, programme de formation interne pour renforcer les compétences de l\'équipe',
+      'exp.veolia.li5': 'Pilotage de la planification et de l\'évaluation technique des nouvelles fonctionnalités avec estimation de charge',
+      'exp.enedis.role': 'Lead Développeuse Full-Stack',
+      'exp.enedis.date': 'Mar 2018 – Sep 2018 · 6 mois',
+      'exp.enedis.desc': 'Oups V2 — application web de gestion des relevés de compteurs et d\'assistance aux agents de terrain.',
+      'exp.enedis.li1': 'Management d\'une équipe de 5 développeurs full-stack',
+      'exp.enedis.li2': 'Refactoring et migration de l\'application OUPS V1, séparation du front-end et du back-end',
+      'exp.enedis.li3': 'Développement d\'une API REST pour exposer les données au front-end',
+      'exp.culture.role': 'Lead Développeuse Full-Stack',
+      'exp.culture.date': 'Août 2017 – Fév 2018 · 6 mois',
+      'exp.culture.desc': 'Harmonie — application web de gestion des fonds d\'investissement entre le parlement et les associations.',
+      'exp.culture.li1': 'Management technique d\'une équipe de 4 stagiaires développeurs full-stack et 1 stagiaire test',
+      'exp.culture.li2': 'Participation et animation d\'ateliers client, coordination des processus de test et de déploiement',
+      'exp.culture.li3': 'Contribution aux estimations de coûts pour le pré-vente',
+      'exp.opengroup.role': 'Développeuse Web Full-Stack',
+      'exp.opengroup.date': 'Mar 2016 – Juil 2017 · 1 an 4 mois',
+      'exp.opengroup.desc': 'Développement web pour des clients prestigieux : Institut Curie, CGET (europe-en-france.gouv.fr), CNAPS, et France Médias Monde (France 24, RFI, Monte Carlo Doualiya).',
+      'exp.opengroup.li1': 'Conception et développement de nouvelles fonctionnalités sur plusieurs projets clients',
+      'exp.opengroup.li2': 'Automatisation des tests de régression avec Selenium2, Gherkin et Behat',
+      'exp.opengroup.li3': 'Génération des livrables IPA/APK et gestion des déploiements sur les stores',
+      'exp.cotupha.role': 'Développeuse Web Backend',
+      'exp.cotupha.date': 'Nov 2012 – Fév 2016 · 3 ans 3 mois',
+      'exp.cotupha.desc': 'AlixSys — ERP gérant toutes les phases de distribution pharmaceutique, des commandes fournisseurs à la livraison client.',
+      'exp.cotupha.li1': 'Maintenance et amélioration du système ERP AlixSys',
+      'exp.cotupha.li2': 'Rédaction des spécifications techniques et fonctionnelles',
+      'exp.cotupha.li3': 'Livraison d\'une solution complète de gestion de parc automobile, des ateliers clients jusqu\'au déploiement en production',
+      'edu.title': 'Formation',
+      'edu.degree1': 'Diplôme d\'Ingénieur en Informatique',
+      'edu.degree2': 'Développement Web avec Symfony 3',
+      'edu.degree3': 'Certification Développeur Kony 7',
+      'contact.title': 'Me contacter',
+      'contact.desc': 'Je suis ouverte à de nouvelles opportunités et projets intéressants. Que vous souhaitiez discuter d\'un poste, d\'un défi technique ou simplement échanger. Ma boîte mail est toujours ouverte.',
+      'contact.btn': 'Dire bonjour',
+      'footer.text': 'Conçu &amp; Développé par Salma BEN HADJ ALI &nbsp;·&nbsp; Bretagne, France',
+    }
+  };
+
+  let currentLang = localStorage.getItem('lang') || 'en';
+
+  const resumePdf = {
+    en: 'resume/Salma BEN HADJ ALI - Senior Full-stack Developer.pdf',
+    fr: 'resume/Salma BEN HADJ ALI - Développeuse FullStack Senior.pdf',
+  };
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+    });
+    document.querySelectorAll('[data-resume]').forEach(el => {
+      el.href = resumePdf[lang];
+    });
+    document.getElementById('langToggle').textContent = lang === 'en' ? 'FR' : 'EN';
+    localStorage.setItem('lang', lang);
+  }
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    setLang(currentLang === 'en' ? 'fr' : 'en');
+  });
+
+  setLang(currentLang);
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.timeline-card, .skill-card, .edu-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.25s';
+    observer.observe(el);
+  });
+</script>
+
 </body>
 </html>

@@ -2,7 +2,7 @@
 ## 💻 Hey there! I’m Salma Ben Hadj Ali
 ###  Senior Full-Stack Developer & Technical Lead 😄
 
-##### Welcome to my resume repository! With 12+ years of coding, debugging, and coffee-fueled late nights, I’ve built a journey from developer to technical lead. I specialize in PHP Symfony (yes, we’re good friends) and React, leading with an agile approach, and always keeping a sense of humor handy. This repo gives you the lowdown on my experience, technical chops, and passion for clean, effective code – all with a smile 😊.
+##### Welcome to my resume repository! With 13+ years of coding, debugging, and coffee-fueled late nights, I’ve built a journey from developer to technical lead. I specialize in PHP Symfony (yes, we’re good friends) and React, leading with an agile approach, and always keeping a sense of humor handy. This repo gives you the lowdown on my experience, technical chops, and passion for clean, effective code – all with a smile 😊.
 
 ---
 

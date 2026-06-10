@@ -1,0 +1,362 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% 1.1: added tracking and letter-spacing for prettier lower caps, added `~` for language levels
+% 1.0: initial release
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+\usepackage{tikz}
+\usepackage{amsmath} 
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{163853}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\text{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\titles}[1]{\mbox{\color{cvblue}\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip .5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+\color[HTML]{545454}     % Set default text color (dark blue)
+
+\usepackage{setspace}
+\singlespacing % Set 1.5-line spacing globally
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.345\textwidth} %% Left column -- outer definition
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][298mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{6.5ex}
+
+% Circular image with border-radius: 50%
+\begin{center}
+\begin{tikzpicture}
+    \clip (0,0) circle(2.5cm); % Adjust radius as needed
+    \node at (0,0) [yshift=-0.3cm] {\includegraphics[width=5cm]{photo-profil.jpg}};
+\end{tikzpicture}
+\end{center}
+
+\vspace*{1cm}
+
+\headleft{Coordonnées}
+\MVAt\ {\small salma.benhadjali.io@gmail.com} \\[0.3cm]
+\Mobilefone\ +33\,6\,69\,14\,51\,59 \\[0.3cm]
+\Mundus\ \href{https://github.com/salmabenhadjali}{github.com/salmabenhadjali} \\[0.3cm]
+\Mundus\ \href{https://www.linkedin.com/in/salma-benhadjali-freelance-fullstack-developer/}
+{linkedin.com/in/salma-benhadjali-freelance-fullstack-developer/} \\[0.3cm]
+\Letter\ Paris, France
+\normalsize
+
+\vspace*{2cm}
+
+\headleft{Compétences}
+\begin{itemize}
+\item PHP, JavaScript, TypeScript
+\item Symfony, API Platform, React, Vue
+\item MySQL, PostgreSQL, Apache Solr, MongoDB
+\item Design Patterns, Architecture Hexagonale, KISS, TDD, DDD, SOLID
+\item Docker, Docker Compose, AWS, Concepts de Design System
+\item PHPUnit, Behat, PHPStan, PHP CS Fixer, SonarQube, Git, SVN, Jira
+
+\vspace*{0.5cm}
+
+\item Esprit analytique et résolution de problèmes
+\item Communication et collaboration en équipe
+\item Excellentes capacités organisationnelles
+\item Curieuse et capacité d'apprentissage rapide
+\item Méthodique et rigoureuse
+
+\end{itemize}
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{5ex}
+
+\Huge \textbf{Salma} \textcolor{cvblue}{\textsc{BEN HADJ ALI}} \normalsize
+\is % Item spacing -- defined in the preamble
+\Large Développeuse FullStack Senior \textbf{\textsc{PHP|Symfony|React}} \normalsize
+
+\headright{Profil}
+\smaller{}14 ans d'expérience en développement logiciel, avec une évolution progressive vers des rôles de leadership technique. \\
+\smaller{}Expertise des méthodologies Agile, de Symfony et de React. \\
+\smaller{}Passionnée par le développement logiciel et la conception de solutions performantes et évolutives. \\
+\smaller{}Forte culture de l'excellence technique, de la qualité logicielle et de la réussite collective. \\
+\smaller{}Capacité démontrée à accompagner les équipes et à atteindre des objectifs ambitieux.
+
+\headright{Expériences}
+
+\titles{Développeuse Backend Senior} chez \textit{Believe}  {\small\dates{05/2025 - Aujourd'hui}} \\
+{\small\makebox[\linewidth]{\dates{1 an 1 mois}}} \\
+{\small Believe est un acteur majeur de la distribution musicale numérique, proposant des services aux artistes et aux labels dans le monde entier.} \\
+
+{\small \textbf{Task Force Migration Cloud – Modernisation du SI}} \\
+\smaller{Migration de plus de 20 applications batch historiques d'une infrastructure on-premise vers une architecture cloud native sur Google Cloud Platform} \\
+\smaller{Conception et développement de traitements scalables sur Kubernetes (GKE) en s'appuyant sur Cloud Storage, Secret Manager et ArgoCD} \\
+\smaller{Collaboration avec plusieurs équipes afin de recueillir les besoins métier, reconstituer la connaissance fonctionnelle et sécuriser les migrations} \\
+\smaller{Prise en charge complète du cycle de développement : analyse fonctionnelle, développement, tests et mise en production} \\
+\smaller{Réalisation de revues de code et contribution à la diffusion des bonnes pratiques de développement} \\
+\smaller{Respect des jalons de migration dans un calendrier contraint, permettant d'atteindre l'objectif stratégique fixé avant fin 2025} \\
+\smaller{Amélioration significative de l'observabilité des applications grâce à la mise en place de solutions modernes de monitoring et d'alerting} \\
+
+{\small \textbf{API Référentiels Musicaux}} \\
+\smaller{Conception et développement de nouvelles fonctionnalités pour les référentiels centraux de Believe : Releases, Recordings et Tracks} \\
+\smaller{Mise en œuvre des principes du Domain-Driven Design à travers l'utilisation d'Aggregates, Domain Services et Value Objects pour modéliser des règles métier complexes} \\
+\smaller{Définition et implémentation d'une architecture hexagonale avec séparation des ports et adaptateurs} \\
+\smaller{Participation à l'évolution d'une architecture distribuée moderne intégrant Kafka et les services cloud natifs} \\
+\smaller{Garantie de la qualité du code grâce au refactoring continu, aux tests automatisés et aux revues de code entre pairs} \\
+\smaller{Collaboration étroite avec les équipes produit et les parties prenantes techniques afin de délivrer des solutions évolutives et maintenables}
+\is % Item spacing -- defined in the preamble
+{\small \textbf{PHP 8.4 / Symfony 7.4 / API Platform 4.3 / DDD / Architecture Hexagonale / MariaDB 8.4 / Kafka / GCP / GKE / Cloud Storage / Vault Secret Manager / Docker / ArgoCD / Datadog / GitLab CI/CD / SonarQube / Jira / Confluence / Lucid / Scrum / Ubuntu 26}}
+
+\end{minipage}
+
+\begin{minipage}[t]{0.345\textwidth} %% Left column -- outer definition
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][298mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{6.5ex}
+
+% Circular image with border-radius: 50%
+\begin{center}
+\begin{tikzpicture}
+    \clip (0,0) circle(2.5cm); % Adjust radius as needed
+    \node at (0,0) [yshift=-0.3cm] {\includegraphics[width=5cm]{photo-profil.jpg}};
+\end{tikzpicture}
+\end{center} 
+
+\vspace*{1cm}
+
+\headleft{Formation}
+\textit{SOAT} \dates{2020} \\
+\textbf{Management 3.0}\\
+\is\is\is % Item spacing -- defined in the preamble
+\textit{KONY} \dates{2018} \\
+\textbf{Certification Développeur Kony 7}\\
+\is\is\is % Item spacing -- defined in the preamble
+\textit{SENSIOLABS} \dates{2018} \\
+\fontsize{10,8}{12}\selectfont\textbf{Développement Web avec} \\
+\fontsize{10,8}{12}\selectfont\textbf{Symfony 3} \\
+\is\is\is % Item spacing -- defined in the preamble
+\hfill \dates{2012} \\
+\textit{FACULTÉ DES SCIENCES DE TUNIS} \\
+\textbf{Diplôme d'Ingénieur en Informatique}\\
+
+\vspace*{1cm}
+
+\headleft{Langues}
+
+\textbf{Français}~(C2 – Bilingue) \\
+\textbf{Anglais}~(B2 – Intermédiaire avancé) \\
+\textbf{Arabe}~(Langue maternelle) \\
+
+\vspace*{1cm}
+
+\headleft{Centres d'intérêt}
+
+\text{Cyclisme} \\
+\text{Lecture} \\
+\text{Squash} \\
+\text{Snowboard}
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{1.5ex}
+
+\headright{Experience}
+
+\titles{Lead Technique Backend} chez \textit{Egerie}  {\small\dates{01/2023 - 08/2024}} \\
+{\small\makebox[\linewidth]{\dates{1 an 7 mois}}} \\
+{\small EGERIE est une plateforme collaborative dédiée à la gestion des risques cyber.} \\
+\smaller{Accompagnement technique d'une équipe de 5 développeurs full-stack} \\
+\smaller{Garantie de la qualité du code et des livrables} \\
+\smaller{Maintenance et évolution des applications existantes} \\
+\smaller{Refactoring et migration de code legacy} \\
+\smaller{Développement et automatisation des tests unitaires} \\
+\smaller{Réalisation des études techniques liées à la migration vers PHP 8.1 afin de garantir compatibilité, stabilité et performance}
+\is % Item spacing -- defined in the preamble
+{\small \textbf{PHP 8.1 / Symfony 5.4 / API Platform 2.6 / React 17 / MySQL / Docker / GitLab / GitLab CI/CD / Jira / Confluence / Scrum / Debian 12}}
+
+\vspace{1.5ex}
+
+\titles{Lead Technique Full-Stack} chez \textit{Veolia}  {\small \dates{10/2018 - 12/2022}} %\\
+{\small\makebox[\linewidth]{\dates{4 ans 2 mois}}}
+{\small FluksAqua est une application web d'analyse des données des infrastructures d'eau et d'assainissement.} \\
+\smaller{Management d'une équipe de 7 développeurs full-stack et 2 développeurs backend} \\
+\smaller{Garantie de la qualité du code et des livrables} \\
+\smaller{Analyse des processus de développement et optimisation des workflows afin d'améliorer la productivité de l'équipe} \\
+\smaller{Promotion de l'approche Test-Driven Development (TDD)} \\
+\smaller{Pilotage de la planification et de l'évaluation technique des nouvelles fonctionnalités, incluant les estimations de charge et le suivi des échéances} \\
+\smaller{Création et animation de la FluksAquademy afin de renforcer les compétences de l'équipe} \\
+\smaller{Administration et maintien de SonarQube pour assurer un suivi continu de la qualité du code} \\
+\smaller{Externalisation de la génération des exports et de la gestion des calculs d'indicateurs} %\\
+\is % Item spacing -- defined in the preamble
+{\small \textbf{PHP 7.1 / Symfony 3.4 / API REST / VueJS 2.6 / MySQL / Apache Solr / MongoDB / Cassandra / AWS / Docker / Travis CI / SonarQube / GitHub / Trello / Docsify / Kanban / Scrumban / macOS 10}}
+
+\vspace{1.5ex}
+
+\titles{Lead Développeuse Full-Stack} chez \textit{Open Group - Enedis}  {\small\dates{03/2018 - 09/2018}}
+{\small\makebox[\linewidth]{\dates{6 mois}}}
+{\small Oups V2 est une application web dédiée à la gestion des relevés de compteurs et à l'accompagnement des agents sur le terrain.} \\
+\smaller{Management d'une équipe de 5 développeurs full-stack} \\
+\smaller{Refonte et migration de l'application OUPS V1} \\
+\smaller{Séparation du front-end et du back-end} \\
+\smaller{Conception et développement d'une API REST pour exposer les données au front-end} %\\
+\is % Item spacing -- defined in the preamble
+{\small \textbf{PHP 7.1 / Symfony 3.4 / Angular 5 / HTML5 / CSS3 / Bootstrap 3 / MariaDB 10 / Docker / Jenkins / Jira / Scrum / Windows 10}}
+
+\vspace{1.5ex}
+
+\end{minipage}
+
+\begin{minipage}[t]{0.345\textwidth} %% Left column -- outer definition
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][298mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{6.5ex}
+
+% Circular image with border-radius: 50%
+\begin{center}
+\begin{tikzpicture}
+    \clip (0,0) circle(2.5cm); % Adjust radius as needed
+    \node at (0,0) [yshift=-0.3cm] {\includegraphics[width=5cm]{photo-profil.jpg}};
+\end{tikzpicture}
+\end{center} 
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{1.5ex}
+
+\headright{Experience}
+
+\titles{Lead Développeuse Full-Stack} chez \textit{Open Group - Ministère de la Culture} 
+{\small\dates{08/2017 - 02/2018}} %\\
+{\small \makebox[\linewidth]{\dates{6 mois}}}
+{\small Harmonie est une application web permettant la gestion des fonds d'investissement entre le Parlement et les associations.} \\
+\smaller{Management technique d'une équipe de 4 développeurs full-stack alternants et d'une testeuse alternante} \\
+\smaller{Garantie de la qualité des livrables} \\
+\smaller{Automatisation des tâches répétitives à l'aide de scripts} \\
+\smaller{Participation et animation d'ateliers clients} \\
+\smaller{Mise en place des environnements de développement et de recette} \\
+\smaller{Coordination des phases de recette et de mise en production} \\
+\smaller{Contribution aux chiffrages et aux réponses techniques dans le cadre des activités d'avant-vente}
+\is % Item spacing -- defined in the preamble
+{\small \textbf{PHP 5.4 / Symfony 2.8 / jQuery / HTML5 / CSS3 / Bootstrap 3 / PotgreSQL 9.2 / Vagrant / Jenkins / GitLab / Mantis / Scrumban / Centos 7}}
+
+\vspace{1.5ex}
+
+\titles{Développeuse Web Full-Stack} chez \textit{Open Group}  {\small \dates{03/2016 - 07/2017 }} %\\
+
+{\small \makebox[\linewidth]{\dates{1 an 4 mois}}}
+
+{\small Développement web pour différents clients :}
+
+\begin{itemize}
+
+\item Plateforme et application mobile \href{www.mycurie.fr}{\textcolor{black}{MyCurie}} pour l'Institut Curie
+\item Plateforme Europe en France pour le CGET : \href{www.europe-en-france.gouv.fr}{\textcolor{black}{europe-en-france.gouv.fr}}
+\item Plateforme de formation pour le CNAPS : \href{http://formations.cnaps-securite.fr}{\textcolor{black}{formations.cnaps-securite.fr}}
+\item TMA et maintenance applicative pour \href{https://www.france24.com/}{\textcolor{black}{France 24}},
+\href{https://www.rfi.fr/}{\textcolor{black}{RFI}}
+et \href{https://www.mc-doualiya.com/}{\textcolor{black}{Monte Carlo Doualiya}}
+pour France Médias Monde
+\end{itemize}
+\smaller{Conception et développement de nouvelles fonctionnalités} \\
+\smaller{Maintenance corrective et évolutive des applications existantes} \\
+\smaller{Garantie de la conformité au responsive design} \\
+\smaller{Réalisation de revues de code et de pull requests (PR)} \\
+\smaller{Participation active aux phases de test, à la remontée des anomalies et à l'assurance qualité} \\
+\smaller{Pilotage des phases de recette et des mises en production} \\
+\smaller{Génération des livrables IPA/APK et déploiement des applications mobiles sur les stores} \\
+\smaller{Automatisation des tests de non-régression avec Selenium2, Gherkin et Behat}
+\is % Item spacing -- defined in the preamble
+{\small\textbf{PHP 5.6 / Symfony 2.8 / Drupal 7 / Swagger API / jQuery / HTML5 / CSS3 / Bootstrap 3 / PhoneGap / MySQL 5.7 / VirtualBox / Vagrant / GitLab / Redmine / Scrumban / Ubuntu 14 / Debian 8}}
+
+\vspace{1.5ex}
+
+\titles{Développeuse Backend} chez \textit{COTUPHA}  {\small \dates{11/2012 - 02/2016}} %\\
+{\small \makebox[\linewidth]{\dates{3 ans 3 mois}}}
+{\small AlixSys est un ERP couvrant l'ensemble des processus de distribution pharmaceutique, depuis la commande fournisseur jusqu'à la livraison client.} \\
+\smaller{Maintenance corrective et évolutive de l'ERP existant} \\
+\smaller{Rédaction des spécifications techniques et fonctionnelles} \\
+\smaller{Participation au projet de vente en ligne MyAlix} \\
+\smaller{Réalisation d'une solution complète de gestion de parc automobile : animation des ateliers clients, recueil des besoins, conception, développement et déploiement} %\\
+\is % Item spacing -- defined in the preamble
+{\small \textbf{PHP 5.6 / JavaScript / jQuery / HTML5 / CSS3 / Bootstrap 3 / MySQL 5.7 / SVN / Asana / Kanban / Linux Mint 15}}
+\end{minipage}
+
+\end{document}
